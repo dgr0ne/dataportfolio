@@ -5,44 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Data Analytics Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: #f9f9f9;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
+            line-height: 1.6;
         }
+        
         header {
-            background: #004080;
+            background: rgba(0, 64, 128, 0.95);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        /* Headshot Section */
+        .profile-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #004080;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .profile-section h2 {
+            color: #004080;
+            margin-bottom: 10px;
+        }
+        
+        .profile-section p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1em;
+        }
+        
         section {
-            padding: 20px;
-            max-width: 800px;
+            padding: 40px 20px;
+            max-width: 900px;
             margin: auto;
         }
+        
         h2 {
             color: #004080;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
         }
+        
         .project {
             background: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        .project h3 {
+            color: #004080;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .project p {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: #003060;
+        }
+        
+        footer {
+            background: rgba(0, 64, 128, 0.95);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .project h3 {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>My Data Analytics Portfolio</h1>
-        <p>Showcasing my projects and skills</p>
+        <p>Showcasing data-driven solutions and insights</p>
     </header>
 
+    <!-- Profile Section with Headshot -->
+    <div class="profile-section">
+        <img src="images/headshot.jpg" alt="Profile Photo" class="profile-image">
+        <h2>About Me</h2>
+        <p>AMC Executive at Nordex with expertise in data analytics, automation, and business intelligence. Passionate about turning data into actionable insights that drive efficiency and growth.</p>
+    </div>
+
     <section>
-        <h2>Projects</h2>
+        <h2>Featured Projects</h2>
 
         <div class="project">
             <h3>1. Water Consumption Analysis for Facility Department</h3>
@@ -55,7 +173,12 @@
             <p>💻 Designed and deployed a <b>web-based application</b> using Python (Flask) and SQL for real-time spare tracking.</p>
             <p>⚡ Automated maintenance logs and alert system, reducing downtime by <b>20%</b>.</p>
             <p>📈 Enhanced transparency and decision-making by providing <b>role-based dashboards</b> for operators and managers.</p>
+            <a href="files/webapp-presentation.pdf" class="project-link" target="_blank">View Project Documentation (PDF)</a>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2025 | Built with passion for data analytics</p>
+    </footer>
 </body>
 </html>
