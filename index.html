@@ -3,195 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Data Analytics Portfolio</title>
+    <title>My Data Analytics Portfolio — Premium</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root{
+            --bg:#071126; /* deep navy */
+            --panel:#0f2338; /* card background */
+            --muted:#8b97a8; /* subtle text */
+            --accent:#c5a84a; /* warm gold */
+            --glass: rgba(255,255,255,0.04);
+            --radius:14px;
+            --max-width:1100px;
         }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
+
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: linear-gradient(180deg, var(--bg) 0%, #041023 100%);
+            color:#e6eef8;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.6;
+            padding-bottom:60px;
         }
-        
-        header {
-            background: rgba(0, 64, 128, 0.95);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        .container{max-width:var(--max-width);margin:40px auto;padding:32px}
+
+        /* Top navigation / brand */
+        header.brand{
+            display:flex;align-items:center;justify-content:space-between;gap:20px;
+            background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+            padding:26px; border-radius:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);
+            backdrop-filter: blur(6px);
         }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 600;
+
+        .brand-left{display:flex;align-items:center;gap:18px}
+        .logo{
+            width:62px;height:62px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#b78f2f);
+            display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:#071126;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(9,12,20,0.6)
         }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+
+        .site-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent);line-height:1}
+        .site-sub{font-size:13px;color:var(--muted);margin-top:4px}
+
+        /* Hero */
+        .hero{
+            display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:28px;align-items:center
         }
-        
-        /* Headshot Section */
-        .profile-section {
-            text-align: center;
-            padding: 40px 20px;
-            background: white;
+
+        .hero-card{background:linear-gradient(180deg,var(--panel),rgba(15,35,56,0.85));padding:28px;border-radius:18px;box-shadow:0 10px 40px rgba(2,8,20,0.6)}
+        .hero h1{font-family:'Playfair Display',serif;font-size:36px;color:#fff;margin-bottom:8px}
+        .hero p.lead{color:var(--muted);font-size:15px}
+
+        /* Headshot */
+        .profile{display:flex;flex-direction:column;align-items:center;text-align:center}
+        .profile img{width:150px;height:150px;border-radius:50%;border:4px solid rgba(255,255,255,0.06);object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+        .profile h3{margin-top:14px;color:#f7f8fa;font-family:'Playfair Display',serif}
+        .profile p{color:var(--muted);font-size:14px;max-width:300px}
+
+        /* Projects */
+        section.projects{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+        .card{background:var(--panel);padding:22px;border-radius:var(--radius);box-shadow:0 8px 26px rgba(2,6,23,0.6);transition:transform .28s ease, box-shadow .28s ease}
+        .card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(2,6,23,0.7)}
+        .card h3{font-family:'Playfair Display',serif;color:#fff;margin-bottom:10px;font-size:18px}
+        .card p{color:var(--muted);font-size:14px;margin-bottom:8px}
+        .badge{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.03);color:var(--accent);border-radius:999px;font-weight:600;font-size:13px}
+        .card .actions{margin-top:12px}
+        .btn{
+            display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#071126;text-decoration:none;font-weight:600;font-size:13px;box-shadow:0 6px 18px rgba(183,143,47,0.18)
         }
-        
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #004080;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        
-        .profile-section h2 {
-            color: #004080;
-            margin-bottom: 10px;
-        }
-        
-        .profile-section p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: #555;
-            font-size: 1.1em;
-        }
-        
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        
-        h2 {
-            color: #004080;
-            margin-bottom: 30px;
-            font-size: 2em;
-            text-align: center;
-        }
-        
-        .project {
-            background: white;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        
-        .project h3 {
-            color: #004080;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .project p {
-            margin-bottom: 10px;
-            font-size: 1.05em;
-        }
-        
-        .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #004080;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
-        
-        .project-link:hover {
-            background: #003060;
-        }
-        
-        footer {
-            background: rgba(0, 64, 128, 0.95);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        
+
+        /* Video full width card */
+        .media{grid-column:1/-1}
+        .video-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+
+        footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
         /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .project h3 {
-                font-size: 1.3em;
-            }
+        @media (max-width:980px){
+            .hero{grid-template-columns:1fr}
+            section.projects{grid-template-columns:1fr}
+            .container{padding:18px}
+        }
+
+        @media (max-width:420px){
+            .logo{width:52px;height:52px;font-size:18px}
+            .hero h1{font-size:26px}
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Data Analytics Portfolio</h1>
-        <p>Showcasing data-driven solutions and insights</p>
-    </header>
+    <div class="container">
+        <header class="brand" role="banner">
+            <div class="brand-left">
+                <div class="logo">DA</div>
+                <div>
+                    <div class="site-title">Data Analytics Portfolio</div>
+                    <div class="site-sub">Premium work — analytics, automation & BI</div>
+                </div>
+            </div>
+            <nav aria-label="primary" style="color:var(--muted);font-size:14px">
+                <span style="margin-right:18px">Projects</span>
+                <a href="files/webapp-presentation.pdf" style="color:var(--muted);text-decoration:none">Docs</a>
+            </nav>
+        </header>
 
-    <!-- Profile Section with Headshot -->
-    <div class="profile-section">
-        <img src="images/headshot.jpg" alt="Profile Photo" class="profile-image">
-        <h2>About Me</h2>
-        <p>AMC Executive at Nordex with expertise in data analytics, automation, and business intelligence. Passionate about turning data into actionable insights that drive efficiency and growth.</p>
+        <div class="hero" role="region" aria-label="Introduction">
+            <div class="hero-card">
+                <h1>Insight-led decisions, elegant delivery</h1>
+                <p class="lead">I design enterprise dashboards and automation solutions that translate complex operations into clear KPIs, alerts and visual narratives for faster, confident decision-making.</p>
+
+                <section style="margin-top:20px">
+                    <h2 style="font-size:16px;color:var(--muted);margin-bottom:12px">Featured Projects</h2>
+                    <div class="card" style="margin-bottom:12px">
+                        <h3>Water Consumption Analysis</h3>
+                        <p>Built a Power BI dashboard to monitor daily and monthly usage against a target of 7,130 KL. Delivered trend analysis and filters to improve planning by <strong style="color:var(--accent)">15%</strong>.</p>
+                        <div class="actions"><span class="badge">Power BI</span></div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Inventory & Maintenance Web App</h3>
+                        <p>Designed a Flask + SQL web app for realtime spare tracking, role-based dashboards and automated maintenance alerts, cutting downtime by <strong style="color:var(--accent)">20%</strong>.</p>
+                        <div class="actions"><a class="btn" href="files/webapp-presentation.pdf" target="_blank">View Presentation</a></div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="hero-card profile" aria-labelledby="about-title">
+                <img src="images/headshot.jpg" alt="Profile photo">
+                <h3 id="about-title">About Me</h3>
+                <p>AMC Executive at Nordex — focused on analytics, automation and BI. I turn data into operational advantage with clean visual design and pragmatic engineering.</p>
+            </aside>
+        </div>
+
+        <section class="projects" aria-label="Projects list">
+            <div class="card">
+                <h3>1. Water Consumption Analysis for Facility Department</h3>
+                <p>📊 Built a <strong>Power BI dashboard</strong> to monitor daily and monthly water usage against the target (7,130 KL).</p>
+                <p>✅ Applied trend analysis and data filtering, enabling the facility team to plan resources <strong style="color:var(--accent)">15% more efficiently</strong>.</p>
+            </div>
+
+            <div class="card">
+                <h3>2. Web Application for Inventory & Maintenance Tracking</h3>
+                <p>💻 Designed and deployed a <strong>web-based application</strong> using Python (Flask) and SQL for real-time spare tracking.</p>
+                <p>⚡ Automated maintenance logs and alert system, reducing downtime by <strong style="color:var(--accent)">20%</strong>.</p>
+                <p>📈 Enhanced transparency and decision-making by providing <strong>role-based dashboards</strong> for operators and managers.</p>
+                <div class="actions"><a class="btn" href="files/webapp-presentation.pdf" target="_blank">View Project Documentation (PDF)</a></div>
+            </div>
+
+            <div class="card media">
+                <h3>Inventory Management Dashboard (Excel)</h3>
+                <p>📊 Interactive Excel dashboard tracking issued/received spares and equipment-wise consumption. Includes a Table of Contents and macros for full-screen display.</p>
+                <div class="video-wrap" style="margin-top:12px">
+                    <video width="100%" height="420" controls>
+                        <source src="excel_inventory_dashboard_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 — Built with craft and clarity • Data Analytics Portfolio</p>
+        </footer>
     </div>
-
-    <section>
-        <h2>Featured Projects</h2>
-
-        <div class="project">
-            <h3>1. Water Consumption Analysis for Facility Department</h3>
-            <p>📊 Built a <b>Power BI dashboard</b> to monitor daily and monthly water usage against the target (7,130 KL).</p>
-            <p>✅ Applied trend analysis and data filtering, enabling the facility team to plan resources <b>15% more efficiently</b>.</p>
-        </div>
-
-        <div class="project">
-            <h3>2. Web Application for Inventory & Maintenance Tracking</h3>
-            <p>💻 Designed and deployed a <b>web-based application</b> using Python (Flask) and SQL for real-time spare tracking.</p>
-            <p>⚡ Automated maintenance logs and alert system, reducing downtime by <b>20%</b>.</p>
-            <p>📈 Enhanced transparency and decision-making by providing <b>role-based dashboards</b> for operators and managers.</p>
-            <a href="files/webapp-presentation.pdf" class="project-link" target="_blank">View Project Documentation (PDF)</a>
-        </div>
-    </section>
-
-    <h2>Excel Dashboard Demo</h2>
-
-<div class="project">
-    <h3>Inventory Management Dashboard (Excel)</h3>
-    <p>📊 This interactive Excel dashboard tracks <b>issued and received spares</b> along with <b>equipment-wise consumption</b>. 
-    It includes a <b>Table of Contents</b> for easy navigation and uses <b>Excel Macros</b> to enable full-screen mode for better visualization and user experience.</p>
-
-    <video width="100%" height="400" controls>
-        <source src="excel_inventory_dashboard_demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-
-    <footer>
-        <p>&copy; 2025 | Built with passion for data analytics</p>
-    </footer>
 </body>
 </html>
