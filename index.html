@@ -222,60 +222,102 @@
                 <h3>Project Demonstrations</h3>
                 <p style="margin-bottom:20px">📊 Watch detailed demonstrations of my key analytics and automation projects:</p>
                 
-                <div class="video-gallery">
-                    <div class="video-section">
-                        <h4 style="color:#fff;margin-bottom:12px">Water Consumption Dashboard</h4>
-                        <div class="video-wrap">
-                            <video width="100%" height="300" controls>
-                                <source src="Water_consumption.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                <div class="carousel-container">
+                    <div class="video-carousel">
+                        <div class="carousel-slide">
+                            <h4 style="color:#fff;margin-bottom:12px">Water Consumption Dashboard</h4>
+                            <div class="video-wrap">
+                                <video width="100%" height="400" controls>
+                                    <source src="Water_consumption.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <h4 style="color:#fff;margin-bottom:12px">PM Schedule Automation</h4>
+                            <div class="video-wrap">
+                                <video width="100%" height="400" controls>
+                                    <source src="PM_schedule_extraction.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <h4 style="color:#fff;margin-bottom:12px">Energy Consumption Analysis</h4>
+                            <div class="video-wrap">
+                                <video width="100%" height="400" controls>
+                                    <source src="Energy_consumption.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <h4 style="color:#fff;margin-bottom:12px">Inventory Management Dashboard</h4>
+                            <div class="video-wrap">
+                                <video width="100%" height="400" controls>
+                                    <source src="excel_inventory_dashboard_demo.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="video-section" style="margin-top:30px">
-                        <h4 style="color:#fff;margin-bottom:12px">PM Schedule Automation</h4>
-                        <div class="video-wrap">
-                            <video width="100%" height="300" controls>
-                                <source src="PM_schedule_extraction.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <button class="carousel-btn prev" aria-label="Previous video">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn next" aria-label="Next video">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+
+                    <div class="carousel-nav">
+                        <div class="nav-dot active"></div>
+                        <div class="nav-dot"></div>
+                        <div class="nav-dot"></div>
+                        <div class="nav-dot"></div>
                     </div>
 
-                    <div class="video-section" style="margin-top:30px">
-                        <h4 style="color:#fff;margin-bottom:12px">Energy Consumption Analysis</h4>
-                        <div class="video-wrap">
-                            <video width="100%" height="300" controls>
-                                <source src="Energy_consumption.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-
-                    <div class="video-section" style="margin-top:30px">
-                        <h4 style="color:#fff;margin-bottom:12px">Inventory Management Dashboard</h4>
-                        <div class="video-wrap">
-                            <video width="100%" height="300" controls>
-                                <source src="excel_inventory_dashboard_demo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <div class="carousel-instructions">
+                        <p style="color:var(--muted);font-size:13px;text-align:center;margin-top:12px">
+                            <span style="color:var(--accent)">↔️ Navigation:</span> Use arrow buttons or swipe left/right to view more project videos
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <style>
-            .video-gallery {
-                display: grid;
-                gap: 20px;
+            .carousel-container {
+                position: relative;
+                width: 100%;
                 margin-top: 20px;
+                padding: 0 0 30px;
             }
-            
-            .video-section {
-                background: rgba(255,255,255,0.02);
+
+            .video-carousel {
+                display: flex;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-behavior: smooth;
+            }
+
+            .video-carousel::-webkit-scrollbar {
+                display: none;
+            }
+
+            .carousel-slide {
+                min-width: 100%;
+                scroll-snap-align: start;
                 padding: 20px;
+                background: rgba(255,255,255,0.02);
                 border-radius: 12px;
                 border: 1px solid rgba(255,255,255,0.04);
             }
@@ -286,15 +328,111 @@
                 background: rgba(0,0,0,0.2);
             }
 
-            @media (min-width: 1200px) {
-                .video-gallery {
-                    grid-template-columns: repeat(2, 1fr);
+            .carousel-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--panel);
+                border: 1px solid rgba(255,255,255,0.1);
+                color: var(--accent);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .carousel-btn:hover {
+                background: var(--accent);
+                color: var(--bg);
+            }
+
+            .carousel-btn.prev {
+                left: -20px;
+            }
+
+            .carousel-btn.next {
+                right: -20px;
+            }
+
+            .carousel-nav {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 20px;
+            }
+
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.2);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .nav-dot.active {
+                background: var(--accent);
+                transform: scale(1.2);
+            }
+
+            @media (max-width: 768px) {
+                .carousel-btn {
+                    display: none;
                 }
-                .video-section {
-                    margin-top: 0 !important;
+                .carousel-instructions p {
+                    font-size: 12px;
                 }
             }
         </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const carousel = document.querySelector('.video-carousel');
+                const slides = document.querySelectorAll('.carousel-slide');
+                const prevBtn = document.querySelector('.carousel-btn.prev');
+                const nextBtn = document.querySelector('.carousel-btn.next');
+                const dots = document.querySelectorAll('.nav-dot');
+                let currentSlide = 0;
+
+                function updateDots() {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[currentSlide].classList.add('active');
+                }
+
+                function scrollToSlide(index) {
+                    slides[index].scrollIntoView({ behavior: 'smooth' });
+                    currentSlide = index;
+                    updateDots();
+                }
+
+                prevBtn?.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    scrollToSlide(currentSlide);
+                });
+
+                nextBtn?.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    scrollToSlide(currentSlide);
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => scrollToSlide(index));
+                });
+
+                // Handle scroll snap completion
+                carousel.addEventListener('scrollend', () => {
+                    currentSlide = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+                    updateDots();
+                });
+
+                // Initialize
+                updateDots();
+            });
+        </script>
 
         <footer>
             <p>&copy; 2025 — Built with craft and clarity • Data Analytics Portfolio</p>
