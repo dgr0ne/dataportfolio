@@ -120,12 +120,6 @@
             /* Show videos on mobile instead of download links */
             .video-player{display:block !important}
             .video-download{display:none}
-            /* Show appropriate video version based on screen size */
-            .video-mobile{display:none}
-            @media (max-width: 767px) {
-                .video-desktop{display:none !important}
-                .video-mobile{display:block !important}
-            }
         }
 
         @media (max-width:420px){
@@ -362,12 +356,8 @@
                         <div class="carousel-slide">
                             <h4 style="color:#fff;margin-bottom:12px">🔧 Maintenance AI Agent</h4>
                             <div class="video-wrap">
-                                <video width="100%" height="400" controls class="video-player video-desktop" preload="metadata" playsinline>
+                                <video width="100%" height="400" controls class="video-player" preload="metadata" playsinline>
                                     <source src="Maintenance AI agent.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <video width="100%" height="400" controls class="video-player video-mobile" preload="metadata" playsinline>
-                                    <source src="Maintenance AI agent_mobile.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <a href="Maintenance AI agent.mp4" download class="video-download">📥 Download Video (MP4)</a>
@@ -377,12 +367,8 @@
                         <div class="carousel-slide">
                             <h4 style="color:#fff;margin-bottom:12px">📱 Specification Verification Bot</h4>
                             <div class="video-wrap">
-                                <video width="100%" height="400" controls class="video-player video-desktop" preload="metadata" playsinline>
+                                <video width="100%" height="400" controls class="video-player" preload="metadata" playsinline>
                                     <source src="Specification Verification Bot/Specification Verification Bot.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <video width="100%" height="400" controls class="video-player video-mobile" preload="metadata" playsinline>
-                                    <source src="Specification Verification Bot/Specification Verification Bot_mobile.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <a href="Specification Verification Bot/Specification Verification Bot.mp4" download class="video-download">📥 Download Video (MP4)</a>
