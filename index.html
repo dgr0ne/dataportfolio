@@ -92,6 +92,217 @@
         .media{grid-column:1/-1}
         .video-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
 
+        /* Flagship Project Card & Narrative Styles */
+        .flagship-card {
+            border: 1px solid rgba(197, 168, 74, 0.45);
+            background: linear-gradient(180deg, rgba(15, 35, 56, 0.98) 0%, rgba(8, 20, 34, 0.98) 100%);
+            box-shadow: 0 14px 45px rgba(2, 6, 23, 0.75), 0 0 25px rgba(197, 168, 74, 0.08);
+            position: relative;
+            padding: 26px;
+        }
+        .flagship-card:hover {
+            box-shadow: 0 20px 55px rgba(2, 6, 23, 0.85), 0 0 35px rgba(197, 168, 74, 0.15);
+            border-color: rgba(197, 168, 74, 0.65);
+        }
+        .flagship-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .badge-experiment {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: rgba(197, 168, 74, 0.15);
+            color: #ffd875;
+            border: 1px solid rgba(197, 168, 74, 0.5);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: rgba(16, 185, 129, 0.12);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-target {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 12px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            font-size: 12px;
+        }
+        .pulse-dot-amber {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b;
+            display: inline-block;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        .pulse-dot-green {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            display: inline-block;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.15); }
+        }
+
+        /* Evolution Story Line */
+        .evolution-wrapper {
+            margin: 20px 0;
+            padding: 16px 18px;
+            background: rgba(0, 0, 0, 0.28);
+            border: 1px dashed rgba(197, 168, 74, 0.35);
+            border-radius: 12px;
+        }
+        .evolution-headline {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .evolution-steps {
+            display: flex;
+            align-items: stretch;
+            gap: 12px;
+        }
+        .evolution-step {
+            flex: 1;
+            background: rgba(15, 35, 56, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+        }
+        .evolution-step.active {
+            border-color: rgba(197, 168, 74, 0.55);
+            background: rgba(197, 168, 74, 0.07);
+        }
+        .step-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        .step-label.highlight {
+            color: var(--accent);
+        }
+        .step-heading {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .step-text {
+            font-size: 12.5px;
+            color: var(--muted);
+            line-height: 1.45;
+            margin: 0;
+        }
+        .evolution-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Highlights 2x2 Grid */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+        .highlight-card h4 {
+            color: #fff;
+            font-size: 14.5px;
+            margin-bottom: 8px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 600;
+        }
+        .highlight-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .highlight-card li {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 14px;
+        }
+        .highlight-card li::before {
+            content: "•";
+            position: absolute;
+            left: 2px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Grouped Tech Stack */
+        .tech-stack-container {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .tech-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        .tech-category-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 140px;
+            letter-spacing: 0.3px;
+        }
+
         footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
 
         /* Responsive */
@@ -109,6 +320,10 @@
                 order: 2;
             }
             section.projects{grid-template-columns:1fr}
+            .highlights-grid{grid-template-columns:1fr}
+            .evolution-steps{flex-direction:column;gap:8px}
+            .evolution-arrow{transform:rotate(90deg);margin:-2px 0}
+            .tech-category-label{width:100%;margin-bottom:2px}
             .container{padding:18px}
             .profile p {
                 max-width: none;
@@ -171,37 +386,42 @@
 
                 <section style="margin-top:20px">
                     <h2 style="font-size:16px;color:var(--muted);margin-bottom:12px">Featured Projects</h2>
-                    <div class="card" style="margin-bottom:12px">
-                <h3>🤖 AI-Powered Procurement Expediting Agent</h3>
-                <p>🤖 Engineered an end-to-end agentic workflow to automate supplier follow-ups for overdue Purchase Orders. Integrated Gemini 1.5 Flash to generate context-aware escalation messages and automated WhatsApp nudges via Telegram, reducing manual overhead by <strong style="color:var(--accent)">50%</strong>.</p>
-                
-                <div class="project-images" style="margin:20px 0;">
-                    <div class="image-item" style="text-align:center;">
-                        <img src="Expediting/Expediting.jpeg" alt="Expediting Flow Diagram" style="max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);">
-                        <p style="text-align:center;margin-top:8px;color:var(--muted);font-size:12px">Expediting Workflow</p>
+
+                    <div class="card" style="margin-bottom:12px;border: 1px solid rgba(197, 168, 74, 0.45);background: linear-gradient(180deg, rgba(15,35,56,0.95), rgba(10,24,40,0.95));">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+                            <span class="badge-experiment"><span class="pulse-dot-amber"></span> Active AI Experiment / R&D</span>
+                            <span class="badge-live"><span class="pulse-dot-green"></span> Live Production Testbed</span>
+                        </div>
+                        <h3>🚀 ProMaint Copilot — AI Maintenance Assistant & Smart CMMS</h3>
+                        <p>An experimental AI Maintenance Assistant combining Generative AI with a production CMMS (used by 30–40 plant engineers) to provide real-time machinery fault diagnosis, manual querying, and predictive maintenance guidance.</p>
+                        <div class="actions">
+                            <span class="badge">Google Gemini API</span>
+                            <span class="badge">Hugging Face</span>
+                            <span class="badge">RAG / CMMS</span>
+                            <span class="badge">React 18</span>
+                            <span class="badge">Supabase Realtime</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="actions">
-                    <span class="badge">Agentic AI</span>
-                    <span class="badge">Gemini 1.5 Flash API</span>
-                    <span class="badge">Google Apps Script</span>
-                    <span class="badge">Telegram Bot</span>
-                    <span class="badge">Automation</span>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h3>🔧 Technical Maintenance Support Agent</h3>
-                <p>🔧 Developed a specialized AI agent using RAG to index machinery manuals and provide instant technical support. Reduced "Time-to-Information" during breakdowns, supporting faster repairs and lower MTTR.</p>
-                <div class="actions">
-                    <span class="badge">RAG</span>
-                    <span class="badge">Hugging Face</span>
-                    <span class="badge">LangChain</span>
-                    <span class="badge">Python</span>
-                    <span class="badge">AI Agent</span>
-                </div>
-            </div>
+
+                    <div class="card" style="margin-bottom:12px">
+                        <h3>🤖 AI-Powered Procurement Expediting Agent</h3>
+                        <p>🤖 Engineered an end-to-end agentic workflow to automate supplier follow-ups for overdue Purchase Orders. Integrated Gemini 1.5 Flash to generate context-aware escalation messages and automated WhatsApp nudges via Telegram, reducing manual overhead by <strong style="color:var(--accent)">50%</strong>.</p>
+                        
+                        <div class="project-images" style="margin:20px 0;">
+                            <div class="image-item" style="text-align:center;">
+                                <img src="Expediting/Expediting.jpeg" alt="Expediting Flow Diagram" style="max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);">
+                                <p style="text-align:center;margin-top:8px;color:var(--muted);font-size:12px">Expediting Workflow</p>
+                            </div>
+                        </div>
+                        
+                        <div class="actions">
+                            <span class="badge">Agentic AI</span>
+                            <span class="badge">Gemini 1.5 Flash API</span>
+                            <span class="badge">Google Apps Script</span>
+                            <span class="badge">Telegram Bot</span>
+                            <span class="badge">Automation</span>
+                        </div>
+                    </div>
                 </section>
             </div>
 
@@ -244,6 +464,116 @@
 
         <section class="projects" aria-label="Projects list">
 
+            <!-- Flagship Project: ProMaint Copilot -->
+            <div class="card media flagship-card" id="promaint-copilot">
+                <div class="flagship-header">
+                    <div>
+                        <div class="flagship-badges">
+                            <span class="badge-experiment"><span class="pulse-dot-amber"></span> Active AI Experiment / R&D</span>
+                            <span class="badge-live"><span class="pulse-dot-green"></span> Live Production Testbed</span>
+                            <span class="badge-target">🎯 Industrial Engineering, Smart Manufacturing & Plant Operations</span>
+                        </div>
+                        <h3 style="font-size:24px;margin-top:8px;margin-bottom:8px;color:#fff;">ProMaint Copilot — AI Maintenance Assistant & Smart CMMS</h3>
+                    </div>
+                </div>
+
+                <p style="font-size:15px;color:#dce7f5;line-height:1.6;margin-bottom:16px;">
+                    An experimental AI Maintenance Assistant combining <strong>Generative AI</strong> with a production CMMS to provide real-time machinery fault diagnosis, manual querying, and predictive maintenance guidance for plant engineers.
+                </p>
+
+                <!-- Genesis & Evolution Story -->
+                <div class="evolution-wrapper">
+                    <div class="evolution-headline">
+                        <span>🚀 Project Evolution & Genesis Journey</span>
+                    </div>
+                    <div class="evolution-steps">
+                        <div class="evolution-step">
+                            <div class="step-label">Phase 1 • Origin</div>
+                            <div class="step-heading">Inventory Web App</div>
+                            <p class="step-text">Started as a real-time spare tracking & maintenance logging web app using Bolt AI & Supabase, slashing plant downtime by <strong>20%</strong>.</p>
+                        </div>
+                        <div class="evolution-arrow">➔</div>
+                        <div class="evolution-step">
+                            <div class="step-label">Phase 2 • Operational Scale</div>
+                            <div class="step-heading">Production Plant CMMS</div>
+                            <p class="step-text">Scaled into a full-fledged enterprise CMMS actively deployed for <strong>30–40 plant engineers & technicians</strong>, managing 250+ PM routines/month.</p>
+                        </div>
+                        <div class="evolution-arrow">➔</div>
+                        <div class="evolution-step active">
+                            <div class="step-label highlight">Phase 3 • Active AI R&D</div>
+                            <div class="step-heading">ProMaint Copilot (GenAI)</div>
+                            <p class="step-text">Supercharged with <strong>Google Gemini API</strong> & <strong>Hugging Face RAG</strong> for instant failure diagnosis, manual querying, and predictive repair protocols.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Key Highlights 2x2 Grid -->
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <h4>🤖 Generative AI Maintenance Copilot <span class="badge-experiment" style="font-size:10.5px;padding:2px 8px;margin-left:4px;">Active Experiment</span></h4>
+                        <ul>
+                            <li>Experimenting with <strong>Google Gemini</strong> and <strong>Hugging Face</strong> models to build a domain-specific assistant for heavy machinery diagnostics.</li>
+                            <li><strong>Retrieval-Augmented Troubleshooting (RAG):</strong> Ingests equipment technical documentation and historical breakdown logs so technicians can query failure symptoms in natural language.</li>
+                            <li>Assists field engineers with instant root-cause suggestions, lubricant specifications, and step-by-step repair protocols.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h4>🏭 Real-World Production Testbed</h4>
+                        <ul>
+                            <li>Validated on a live enterprise CMMS actively used by <strong>30–40 plant engineers and technicians</strong> daily.</li>
+                            <li>Provides rich historical operational training data from machinery breakdown logs, consumption history, and maintenance checklists.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h4>⚙️ Dynamic PM Scheduling Engine</h4>
+                        <ul>
+                            <li>Built a custom calendar algorithm projecting <strong>250+ PM routines/month</strong> across all plant equipment units.</li>
+                            <li>Features dynamic <strong>day-clamping</strong> to eliminate month-end schedule drift (29th–31st) and prevent duplicate work orders.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h4>📱 Plant Floor Mobility & Tooling</h4>
+                        <ul>
+                            <li>Integrated mobile camera <strong>HTML5 QR scanner</strong> for instant machine identification directly on the shop floor.</li>
+                            <li>Real-time incident dispatching and client-side vector PDF generation for official plant audit compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Categorized Tech Stack Badges -->
+                <div class="tech-stack-container">
+                    <div class="tech-row">
+                        <span class="tech-category-label">AI & LLMs:</span>
+                        <span class="badge">Google Gemini API</span>
+                        <span class="badge">Hugging Face</span>
+                        <span class="badge">RAG / Semantic Search</span>
+                    </div>
+                    <div class="tech-row">
+                        <span class="tech-category-label">Frontend:</span>
+                        <span class="badge">React 18</span>
+                        <span class="badge">TypeScript</span>
+                        <span class="badge">Vite</span>
+                        <span class="badge">Tailwind CSS</span>
+                        <span class="badge">Lucide Icons</span>
+                    </div>
+                    <div class="tech-row">
+                        <span class="tech-category-label">Real-time & Data:</span>
+                        <span class="badge">Supabase</span>
+                        <span class="badge">PostgreSQL Realtime</span>
+                        <span class="badge">Web Push Notifications</span>
+                    </div>
+                    <div class="tech-row">
+                        <span class="tech-category-label">Industrial Utilities:</span>
+                        <span class="badge">HTML5-QRCode Scanner</span>
+                        <span class="badge">jsPDF</span>
+                        <span class="badge">SheetJS (XLSX)</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <h3>🤖 Procurement Expediting Agent</h3>
                 <p>🤖 Engineered an end-to-end agentic workflow to automate supplier follow-ups for overdue Purchase Orders. Integrated Gemini 1.5 Flash to generate context-aware escalation messages and automated WhatsApp nudges via Telegram, reducing manual overhead by <strong style="color:var(--accent)">50%</strong>.</p>
@@ -253,18 +583,6 @@
                     <span class="badge">Google Apps Script</span>
                     <span class="badge">Telegram Bot</span>
                     <span class="badge">Automation</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>🔧 Maintenance Support Agent</h3>
-                <p>🔧 Developed a specialized AI agent using RAG to index machinery manuals and provide instant technical support. Reduced "Time-to-Information" during breakdowns, supporting faster repairs and lower MTTR.</p>
-                <div class="actions">
-                    <span class="badge">RAG</span>
-                    <span class="badge">Hugging Face</span>
-                    <span class="badge">LangChain</span>
-                    <span class="badge">Python</span>
-                    <span class="badge">AI Agent</span>
                 </div>
             </div>
 
@@ -299,8 +617,8 @@
             </div>
             
             <div class="card">
-                <h3>💻 Inventory Management Web App</h3>
-                <p>💻 Designed and deployed a <strong>web-based application</strong> using Bolt AI for real-time spare tracking. Automated maintenance logs and alert system, reducing downtime by <strong style="color:var(--accent)">20%</strong>.</p>
+                <h3>💻 Inventory Management Web App (ProMaint Genesis)</h3>
+                <p>💻 Originally designed and deployed as a <strong>real-time spare tracking & maintenance logging web app</strong> using Bolt AI and Supabase, reducing downtime by <strong style="color:var(--accent)">20%</strong>. <em>Served as the foundational testbed and operational dataset that evolved into the ProMaint CMMS & AI Copilot above.</em></p>
                 <div class="actions">
                     <span class="badge">Bolt AI • No-Code</span>
                     <span class="badge">Supabase • SQL</span>
@@ -354,7 +672,7 @@
                 <div class="carousel-container">
                     <div class="video-carousel">
                         <div class="carousel-slide">
-                            <h4 style="color:#fff;margin-bottom:12px">🔧 Maintenance AI Agent</h4>
+                            <h4 style="color:#fff;margin-bottom:12px">🔧 ProMaint Copilot Demo (Industrial AI Assistant)</h4>
                             <div class="video-wrap">
                                 <video width="100%" height="400" controls class="video-player" preload="metadata" playsinline>
                                     <source src="Maintenance AI agent.mp4" type="video/mp4">
@@ -429,6 +747,8 @@
 
                     <div class="carousel-nav">
                         <div class="nav-dot active"></div>
+                        <div class="nav-dot"></div>
+                        <div class="nav-dot"></div>
                         <div class="nav-dot"></div>
                         <div class="nav-dot"></div>
                         <div class="nav-dot"></div>
@@ -645,7 +965,9 @@
 
                 function updateDots() {
                     dots.forEach(dot => dot.classList.remove('active'));
-                    dots[currentSlide].classList.add('active');
+                    if (dots[currentSlide]) {
+                        dots[currentSlide].classList.add('active');
+                    }
                 }
 
                 function scrollToSlide(index) {
